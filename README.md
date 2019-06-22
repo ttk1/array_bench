@@ -6,14 +6,14 @@ bashのtimeコマンドを使う
 
 ```bash
 TIMEFORMAT='%R'
-measured=$((time $target 2>/dev/null;) 2>&1)
+measured=$((time ($target 1>/dev/null 2>&1)) 2>&1)
 ```
 
 ```bash
 # example
 $ target='sleep 5'
 $ TIMEFORMAT='%R'
-$ echo $((time $target 2>/dev/null;) 2>&1)
+$ echo $((time ($target 1>/dev/null 2>&1)) 2>&1)
 5.028
 ```
 
